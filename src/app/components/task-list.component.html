@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-10">        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="clickable" (click)="sort('code')">Code</th>
+                    <th scope="col" class="clickable" (click)="sort('name')">Name</th>
+                    <th scope="col" class="clickable" (click)="sort('status')">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>        
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of clientList">
+                    <th scope="row">{{c.code}}</th>
+                    <td>{{c.name}}</td>
+                    <td>{{c.status}}</td>
+                    <td>                       
+                        <button class="btn btn-primary" (click)="load(c)" role="button">edit</button>
+                        &nbsp;
+                        <button class="btn btn-danger" role="button" (click)="remove(c._id)">X</button>
+                    </td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <button type="button" class="btn btn-success" (click)="export()">Export XLS</button> &nbsp;
+    <button type="button" class="btn btn-primary" (click)="new()">New</button>
+</div>
+
+
